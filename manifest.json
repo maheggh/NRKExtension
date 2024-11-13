@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "NRK News Filter",
+    "version": "1.0",
+    "description": "Filter specific categories on NRK.no",
+    "permissions": ["activeTab", "storage", "scripting"],
+    "host_permissions": ["https://www.nrk.no/*"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.nrk.no/*"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ]
+}
