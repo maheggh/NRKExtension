@@ -84,6 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { action: "showAll" });
         });
+    
         categoryContainer.querySelectorAll("input[type='checkbox']").forEach(checkbox => checkbox.checked = false);
+        chrome.storage.local.remove("selectedFilters"); 
     });
 });
